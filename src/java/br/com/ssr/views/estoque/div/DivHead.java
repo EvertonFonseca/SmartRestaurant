@@ -7,6 +7,7 @@ package br.com.ssr.views.estoque.div;
 
 import eu.webtoolkit.jwt.AlignmentFlag;
 import eu.webtoolkit.jwt.Side;
+import eu.webtoolkit.jwt.WApplication;
 import eu.webtoolkit.jwt.WContainerWidget;
 import eu.webtoolkit.jwt.WHBoxLayout;
 import eu.webtoolkit.jwt.WLength;
@@ -63,11 +64,10 @@ public class DivHead extends WContainerWidget{
         menuCadastroFornecedor.setContentAlignment(AlignmentFlag.AlignLeft);
         menuCadastroFornecedor.clicked().addListener(menuCadastroFornecedor,(arg)->{
         
-            System.out.println("Clicado");
         });
         WText text = new WText("Cadastro",menuCadastroFornecedor);
      
-        tempConfig.bindWidget("",menuCadastroFornecedor);
+        tempConfig.bindWidget("menu-cadastro",menuCadastroFornecedor);
         
         WTemplate tempCadastro = new WTemplate();
         tempCadastro.setTemplateText("<div class=\"dropdown\">\n"
@@ -94,8 +94,7 @@ public class DivHead extends WContainerWidget{
                 + "  <div class=\"dropdown-content\">\n"
                 + "  </div>\n"
                 + "</div>");
-        
-
+      
         //add menus
         boxMenu.addWidget(tempConfig,0,AlignmentFlag.AlignMiddle);
         boxMenu.addWidget(tempCadastro,0,AlignmentFlag.AlignMiddle);
